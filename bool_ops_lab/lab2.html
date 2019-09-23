@@ -1,0 +1,34 @@
+<!doctype html>
+<head>
+    <title>Lab 2: Boolean Operations</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="lab2.css"/>
+</head>
+<body>
+    <h2>Lab 2: Boolean Operations</h2>
+
+<p><strong>Question 1:</strong> Determine the order of operations for the boolean operators: <strong>and, or, not</strong>.</p>
+
+
+<pre class="pybox">
+&gt;&gt;&gt; x = True
+&gt;&gt;&gt; y = False
+&gt;&gt;&gt; not y and y
+False
+</pre>
+
+<p>The python terminal code above proves that the boolean operator <strong>not</strong> has priority over <strong>and</strong>. This can be seen through the experiment above, if we assume <strong>and</strong> has priority then the expression y and y is evaluated first; simplifying the expression to not False. This would evaluate to True, which is contradictory to the experiment above, proving that the <strong>not</strong> operator has presidence over the <strong>and</strong> operator.</p>
+
+<pre class="pybox">
+&gt;&gt;&gt; x = True
+&gt;&gt;&gt; y = False
+&gt;&gt;&gt; y or y and x or x
+True
+</pre>
+
+<p>Using the experiment above we proved that <strong>and</strong> has priority over <strong>or</strong>. This can be shown in the example above, if <strong>or</strong> has priority in the order of operations then the boolean expression above would evaluate to False. As we can see, the boolean expression above evaluates to True, meaning  <strong>and</strong> has presidence over <strong>or</strong>.</p>
+
+<p>Now we have two conditions to determine the boolean order of operations.<strong>Condition 1:</strong> <strong>not</strong> must have presidence over <strong>and</strong>. <strong>Condition 2:</strong> and must have presidence over or. Using these two conditions we can derive the boolean order of operations: <strong>not, and, or</strong>, which is the only combination of boolean operators which will satisfy the conditions above. <strong>not, and, or</strong> is the correct order of operations!</p>
+
+</body>
+</html>

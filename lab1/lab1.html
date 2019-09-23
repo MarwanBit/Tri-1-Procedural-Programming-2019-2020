@@ -1,0 +1,126 @@
+<!doctype html>
+<head>
+    <title>Lab 1: Scientific Calculations</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="lab1.css"/>
+</head>
+<body>
+    <h2>Lab 1: Scientific Calculations</h2>
+
+<p><strong>Question 1</strong> Given that light travels at 2.9979e8 (that's
+2.9979*108 in scientific notation) meters per second, figure out how fast light
+moves in miles per second. Then convert this to miles per hour.</p>
+
+
+<pre class="pybox">
+&gt;&gt;&gt; speed_of_light_in_meters_per_second = 2.9979e8
+&gt;&gt;&gt; mile = 1
+&gt;&gt;&gt; feet_per_mile = 5280
+&gt;&gt;&gt; inches_per_feet = 12
+&gt;&gt;&gt; centimeters_per_inch = 2.54
+&gt;&gt;&gt; centimeters_per_mile = mile * feet_per_mile * inches_per_feet * centimeters_per_inch
+&gt;&gt;&gt; print(centimeters_per_mile)
+160934.4
+&gt;&gt;&gt; centimeters_per_meter = 100
+&gt;&gt;&gt; meters_per_mile = centimeters_per_mile / centimeters_per_meter 
+&gt;&gt;&gt; print(meters_per_mile)
+1,609.344
+&gt;&gt;&gt; speed_of_light_in_miles_per_second = speed_of_light_in_meters_per_second / meters_per_mile
+&gt;&gt;&gt; print(speed_of_light_in_miles_per_second)
+186280.86972083035
+&gt;&gt;&gt; seconds_per_minute = 60
+&gt;&gt;&gt; minutes_per_hour = 60 
+&gt;&gt;&gt; seconds_per_hour = seconds_per_minute * minutes_per_hour 
+&gt;&gt;&gt; speed_of_light_in_miles_per_hour = speed_of_light_in_miles_per_second * seconds_per_hour 
+&gt;&gt;&gt; print(speed_of_light_in_miles_per_hour)
+670611130.9949893
+</pre>
+
+<p><strong>Explanation for Question 1:</strong> Given that light travels at 2.9979e8 (that's
+2.9979*108 in scientific notation) meters per second, we can then find speed_of_light_in_miles_per_second
+through finding how many meters are in a mile and multiplying those rates together which will give you
+the speed of light in miles per second. We can obtain this calculation through multiplying 1mile by the feet_per_mile rate, then the inches_per_feet rate, then the centimeters_per_inch rate to get the centimeters_per_mile. Afterward, you can find the meters_per_mile by dividing the centimeters_per_mile rate by the
+centimeters_per_meter rate, giving you the meters_per_mile. afterwards you can divide the speed_of_light_in_meters_per_second by the meters_per_mile ratio in order to get the speed_of_light_in_meters_per_second. Finally we can get the speed_of_light_in_miles_per_hour by multiplying the speed_of_light_in_meters_per_second by the seconds_per_hour rate to get the value <strong>670,611,130.994983</strong>, meaning the speed of light is equivalent to <strong>670,611,130.994983 miles per hour.</strong></p>
+
+
+<p><strong>Question 2</strong> Tell the time it take for light to go from the sun to the earth if the mean distance of the sun to the earth is 93.0 million miles.</p>
+
+<pre class="pybox">
+&gt;&gt;&gt; earth_to_sun_distance = 93000000
+&gt;&gt;&gt; speed_of_light_in_miles_per_hour = 670611130.994983
+&gt;&gt;&gt; time_required_in_hours = earth_to_sun_distance / speed_of_light_in_miles_per_hour
+&gt;&gt;&gt; minutes_per_hour = 60 
+&gt;&gt;&gt; time_required_in_minutes = time_required_in_hours * minutes_per_hour
+&gt;&gt;&gt; print(time_required_in_minutes)
+8.320768537976662
+</pre>
+
+<p><strong>Explanation for Question 2:</strong> to find out the amount of time it takes light to go from the sun to
+the earth we must first find the amount of time that's required to for light to go from the sun to the Earth in hours. To do this we divide the earth_to_sun_distance by the speed_of_light_in_miles_per_hour to get the time required in hours. Afterward, we can convert the time required in hours to the time required in minutes by multiplying by minutes_per_hour(60). This leads to the answer of <strong>8.320768537976662 minutes.</strong></p>
+
+<p><strong>Question 3</strong> . Use the fact that a liter of water weighs one kilogram and that one gallon of water weighs 8.33 lbs to determine the number of cubic inches in a gallon and the number of pounds in a cubic foot of water.</p>
+
+<pre class="pybox">
+&gt;&gt;&gt; gallons_per_pound_of_water = 1 / 8.33
+&gt;&gt;&gt; pounds_per_kilogram = 2.204
+&gt;&gt;&gt; gallons_per_kilogram_of_water = gallons_per_pound_of_water * pounds_per_kilogram
+&gt;&gt;&gt; print(gallons_per_kilogram_of_water)
+0.2645858343337335
+&gt;&gt;&gt; kilograms_per_liter_of_water = 1
+&gt;&gt;&gt; gallons_per_liter_of_water = gallons_per_kilogram_of_water * kilograms_per_liter_of_water
+&gt;&gt;&gt; liters_per_fluid_ounce_of_water = 1 / 33.8
+&gt;&gt;&gt; gallons_per_fluid_ounce_of_water = gallons_per_liter_of_water * liters_per_fluid_ounce_of_water
+&gt;&gt;&gt; print(gallons_per_fluid_ounce_of_water)
+0.007827983264311642
+&gt;&gt;&gt; fluid_ounces_per_cubic_centimeter = 33.8 / 1000
+&gt;&gt;&gt; gallons_of_water_per_cubic_centimeter = gallons_per_fluid_ounce_of_water * fluid_ounces_per_cubic_centimeter
+&gt;&gt;&gt; cubic_centimeters_per_cubic_inch = (2.54)**3
+&gt;&gt;&gt; gallons_of_water_per_cubic_inch= gallons_of_water_per_cubic_centimeter * cubic_centimeters_per_cubic_inch
+&gt;&gt;&gt; print(gallons_of_water_per_cubic_inch)
+0.004335785000720288
+
+&gt;&gt;&gt; cubic_inches_per_cubic_foot = 12**3
+&gt;&gt;&gt; gallons_of_water_per_cubic_foot = gallons_of_water_per_cubic_inch * cubic_inches_per_cubic_foot
+&gt;&gt;&gt; pounds_per_gallon_of_water = 8.33 
+&gt;&gt;&gt; pounds_of_water_per_cubic_foot = gallons_of_water_per_cubic_foot * pounds_per_gallon_of_water
+&gt;&gt;&gt; print(pounds_of_water_per_cubic_foot)
+62.410329888768004
+</pre>
+
+<p><strong>Explanation for Question 3:</strong> First we set up the ratio of gallons_per_pound_of_water, if we multiply this by the pound_per_kilogram we get the ratio for the gallons_per_kilogram_of_water. We can then find the gallons_per_liter_of_water by multiplying the gallons_per_kilogram_of_water by the kilograms_per_liter_of_water(1) (cancelling out the kilograms unit). From here we can dins the gallons_per_fluid_ounce_of_water by multiplying the gallons_per_liter_of_water by the liters_per_fluid_ounce_of_water (1/33.8, given in the problem). Now we have the gallons_per_fluid_ounce_of_water. From here we can find the gallons_of_water_per_cubic_centimeter by multiplying the gallons_per_fluid_ounce_of_water by fluid_ounces_per_cubic_centimeter (33.8/1000). This gives us gallons_of_water_per_cubic_centimeter. Now we can find the gallons_of_water_per_cubic_inch by multiplying the gallons_of_water_per_cubic_centimeter which we just found by the cubic_centimeters_per_cubic_inch(2.54**3). This gives us the gallons_of_water_per_cubic_inch to be about <strong>0.0043 gallons of water per cubic inch</strong> which concludes Part A of the problem.</p>
+
+<p><strong>Part B:</strong> Now that we have the gallons_of_water_per_cubic_inch we can find the pounds_of_water_per_cubic_foot. To do this we find the gallons_of_water_per_cubic_foot by multiplying the gallons_of_water_per_cubic_inch by the cubic_inches_per_cubic_foot (12**3). This gives us the gallons_of_water_per_cubic_foot, to convert this to the pounds_of_water_per_cubic_foot we multiply the gallons_of_water_per_cubic_foot by the pounds_per_gallon_of_water(8.33). Now this gives us the pounds_of_water_per_cubic_foot which is about <strong>62.41 pounds per cubic foot</strong>.</p>
+
+
+
+<p><strong>Question 4</strong> Let us assume that humans weigh an average of 140 lbs and that humans have about the same density as water. If the population of the earth is 7.0 billion humans, estimate the total volume of humanity in cubic miles. Comment on this estimate.</p>
+
+
+<pre class="pybox">
+&gt;&gt;&gt; pounds_per_human = 140
+&gt;&gt;&gt; human_population = 7000000000
+&gt;&gt;&gt; weight_in_pounds_of_human_population = pounds_per_human * human_population 
+&gt;&gt;&gt; kilograms_per_pound = 1/2.204
+&gt;&gt;&gt; weight_of_human_population_in_kilograms = weight_in_pounds_of_human_population * kilograms_per_pound
+&gt;&gt;&gt; mass_of_water_in_kilograms = 1
+&gt;&gt;&gt; volume_of_water_in_liters = 1 
+&gt;&gt;&gt; density_of_water = mass_of_water_in_kilograms / volume_of_water_in_liters 
+&gt;&gt;&gt; density_of_humans = density_of_water 
+&gt;&gt;&gt; mass_of_human_population = 4.44646098e11 
+&gt;&gt;&gt; volume_of_human_population_in_liters = mass_of_human_population / density_of_humans 
+&gt;&gt;&gt; cube_centimeters_per_liter = 1000 
+&gt;&gt;&gt; volume_of_human_population_in_cube_centimeters = volume_of_human_population_in_liters * cube_centimeters_per_liter
+&gt;&gt;&gt; cube_centimeters_per_cube_inch = 1/2.54**3 
+&gt;&gt;&gt; volume_of_human_population_in_cube_inches = volume_of_human_population_in_cube_centimeters * cube_centimeters_per_cube_inch 
+&gt;&gt;&gt; cube_inches_per_cube_foot = 1/12**3 
+&gt;&gt;&gt; volume_of_human_population_in_cube_feet = volume_of_human_population_in_cube_inches * cube_inches_per_cube_foot 
+&gt;&gt;&gt; cube_feet_per_cube_mile = 1/5280**3 
+&gt;&gt;&gt; volume_of_human_population_in_cube_miles = volume_of_human_population_in_cube_feet * cube_feet_per_cube_mile 
+&gt;&gt;&gt; print(volume_of_human_population_in_cube_miles)
+0.10667627196253622
+</pre> 
+
+<p><strong>Explanation for Question 4:</strong>For this question, we first need to calculate the weight of the human population which is done in the first three lines and stored to the variable weight_in_pounds_of_human_population. We then convert this into weight in kilograms by multiplying by the ratio stored in the variable kilograms_per_pound, which is then assigned to the variable weight_of_human_population_in_kilograms. We then find that the density of water is 1kg/1l, meaning that the density of a human is the same (according to the problem). Now that we know the density we can find the volume of the human population through dividing the mass_of_human_popilation by the density_of_humans. We can then convert the volume_of_human_population_in_liters to volume_of_human_population_in_cube_centimeters by multiplying the volume_of_human_population_in_liters by the cube_centimeters_per_liter rate. We can then convert the volume_of_human_population_in_cube_centimeters to volume_of_human_population_in_cube_inches by multiplying by the centimeters_per_inch rate cubed (this will result in the rate of cube_centimeters_per_cube_inch). To convert from volume_of_human_population_in_cube_inches to volume_of_human_population_in_cube_feet we multiply the volume_of_human_population_in_cube_inches by the inches_per_foot rate cubed (this is equivalent to multiplying by the rate of cube_inches_per_cube_foot). Finally, we can convert this result into the volume_of_human_population_in_cube_mules by multiplying the volume_of_human_population_in_cube_feet by the cube_feet_per_cube_mile rate. The result is the volume_of_human_population_in_cube_miles, the value calculated is about <strong>0.1066 cubic miles</strong>.</p>
+
+</body>
+</html>
