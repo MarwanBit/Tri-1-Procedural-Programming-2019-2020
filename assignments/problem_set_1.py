@@ -238,3 +238,4 @@ if __name__ == "__main__":
     print(datePlus('08-12-95') == 2015)
     ##
     print(daysToGraduation(9,20))
+    print(daysToGraduation(5,21))
