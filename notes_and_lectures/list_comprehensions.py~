@@ -51,10 +51,3 @@ def f_block_sort(input_list):
         if input_list[i] > input_list[i+1]:
             input_list[i],input_list[i+1] = input_list[i+1],input_list[i]
     return input_list
-
-#Sets in python, non-repeating, cannot contain lists 
-#Try the hash function
-print(hash(1))
-#Hashing: is a function which takes some object and turns it into an integer, can't hash a list, 
-#You can't hash lists because hashing is dependent on the object being immutable and having a type,
-#lists are immutable, therefore they cannot be hashed

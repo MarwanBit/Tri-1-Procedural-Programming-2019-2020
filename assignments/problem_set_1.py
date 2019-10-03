@@ -1,7 +1,6 @@
 import datetime
-
 #################################################
-#  Author: Marwan Bit
+#  Author: Marwan Bit (some credit is due to the creators of the datetime and unittest modules aswell)
 #  Date:   9/10/2019
 #  PS1.py
 #################################################
