@@ -11,12 +11,32 @@ def is_legit_integer_string(s):
         k += 1
     return True 
 
-def is_legit_integer_string(s):
+def is_social_security(s):
+    seeker = re.compile("^[0-9]{3}-[0-9]{2}-[0-9]{4}$")
+    return bool(seeker.search(s))
+
+def foo(s):
+    seeker = re.compile("^(Cows|Fish|Chickens) are (tasty|delicious)\.$")
+    return bool(seeker.search(s))
+
+def is_legit_integer_string_re(s):
 	seeker = re.compile("^[+\-]?[0-9]+$")
 	return bool(seeker.search(s))
 
 for i in ["1","23232","+32","-15","3a","4.5","48."]:
-	print(is_legit_integer_string(i))
+	print(is_legit_integer_string_re(i))
+
+print("*"*80)
+for i in ["123-02-0222"]:
+    print(is_social_security(i))
+
+def is_a_legit_phone_number(s):
+    seeker = re.compile("^(\([2-9]{1}[0-9]{2}\)|[2-9]{1}[0-9]{2}-)[0-9]{3}-[0-9]{4}$")
+    return bool(seeker.search(s))
+
+print("*"*80)
+for i in ["(201)666-5456","512-477-7899"]:
+    print(is_a_legit_phone_number(i))
 
 """
 Re is "the language of character classes
@@ -86,8 +106,8 @@ example: ^(ab)*$
 
 another postfix unary operator: + one or more times 
 				? at most once or zero times
-
-
+                {n} exactly n times 
+                {m,n} at least m times but no more than n 
 
 
 """
